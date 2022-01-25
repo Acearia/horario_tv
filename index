@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+<script>
+
+function startTime() {
+
+var today = new Date();
+
+var h = today.getHours();
+
+var m = today.getMinutes();
+
+var s = today.getSeconds();
+
+m = checkTime(m);
+
+s = checkTime(s);
+
+document.getElementById('txt').innerHTML =
+
+h + ":" + m + ":" + s;
+
+var t = setTimeout(startTime, 500);
+
+}
+
+function checkTime(i) {
+
+if (i < 10) {i = "0" + i}; // add zero in front of numbers < 10
+
+return i;
+
+}
+
+</script>
+
+<style>
+
+ .clock-number{
+     margin-top: 5.5%;
+     font-weight: bold;
+     color:white;
+     font-size:90px;
+ }
+
+</style>
+
+</head>
+
+<body style="background: black;" onload="startTime()">
+
+<div style="font-family: 'Orbitron', sans-serif;" class="clock-number" id="txt"></div>
+
+</body>
+
+</html>
